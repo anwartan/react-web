@@ -1,38 +1,258 @@
-.App {
-  text-align: center;
+.container {
+  margin: 0 50px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header {
+  position: relative;
 }
+nav {
+  background: linear-gradient(to bottom, #141b29, #0c111b 300px);
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  padding: 0px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav .content {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 80px;
+  justify-content: space-between;
+}
+
+nav .content .logo {
+  margin-right: 20px;
+}
+nav ul {
+  display: inline-flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+nav li {
+  list-style: none;
+  margin-right: 20px;
+}
+nav a {
+  font-weight: 400;
+  font-size: medium;
+  text-decoration: none;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+nav a:hover {
+  font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+nav .cancel-btn {
+  position: absolute;
+  right: 30px;
+  top: 20px;
+}
+#main {
+  padding-top: 20px;
+}
+.fixed {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.container .content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  background-color: #212f4b;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+.card-title {
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.card-footer {
+  padding: 10px;
+  color: white;
+}
+.article-container {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 4px -3px 10px 6px rgba(0, 0, 0, 0.28);
+  margin: 10px 10px 30px 10px;
+  width: 400px;
+  height: 600px;
+}
+
+.article-container:hover {
+  background-color: #062c4d;
+}
+.article-container img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.article-body {
+  padding: 15px;
+}
+.article-title {
+  color: white;
+  font-weight: 500;
+}
+
+.article-description {
+  color: white;
+  display: -webkit-box;
+
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+footer {
+  color: white;
+  text-align: center;
+}
+.icon {
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+}
+
+.biodata-detail {
+  text-align: center;
+  color: white;
+}
+.biodata-detail img {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+}
+footer {
+  margin-top: 50px;
+}
+
+table {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+table thead,
+table tbody {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+table thead tr,
+table tbody tr {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+}
+table thead tr td,
+table tbody tr td {
+  padding: 5px 5px;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  color: white;
+  align-items: center;
+}
+
+table tbody tr:hover {
+  background-color: #172033;
+}
+
+form {
+  padding: 10px;
+}
+
+.form-control {
+  display: flex;
+
+  padding-bottom: 10px;
+  align-items: center;
+}
+
+.form-control label {
+  display: flex;
+  flex: 1;
+  color: white;
+}
+
+.form-control input {
+  flex: 3;
+  padding: 2px 10px;
+}
+.form-control input[type="text"],
+.form-control input[type="number"] {
+  height: 25px;
+}
+.btn-primary {
+  background-color: #204fb4;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.btn-danger {
+  background-color: #de301c;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.helper {
+  color: white;
+}
+@media screen and (max-width: 1000px) {
+}
+@media screen and (max-width: 992px) {
+}
+@media screen and (max-width: 600px) {
+  .icon {
+    display: block;
   }
-  to {
-    transform: rotate(360deg);
+  .icon.hide {
+    display: none;
+  }
+  nav ul {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    max-width: 600px;
+    left: -100%;
+    top: 0px;
+    display: block;
+    padding: 40px 0;
+    text-align: center;
+    background: #222;
+    transition: all 0.3s ease;
+  }
+  nav.show ul {
+    left: 0%;
+  }
+  nav ul li {
+    margin-top: 45px;
+  }
+  nav ul li a {
+    font-size: 23px;
+    margin-left: -100%;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  nav.show ul li a {
+    margin-left: 0px;
+  }
+  nav .content .logo {
+    flex-grow: 1;
   }
 }
