@@ -11,7 +11,7 @@ const Table = ({ id, columns = [], data = [] }) => {
         </tr>
       </thead>
       <tbody>
-        {data.length > 0 &&
+        {data.length > 0 ? (
           data.map((item, index) => {
             return (
               <tr key={index}>
@@ -27,7 +27,14 @@ const Table = ({ id, columns = [], data = [] }) => {
                 })}
               </tr>
             );
-          })}
+          })
+        ) : (
+          <tr>
+            <td rowSpan={columns.length}>
+              <b>Tidak ada catatan</b>
+            </td>
+          </tr>
+        )}
       </tbody>
     </table>
   );
